@@ -1,0 +1,125 @@
+# Change these (or do not commit them to your repository)
+owner: enou-org
+repo: monstera-ai-status
+
+sites:
+  - name: Website
+    url: $WEBSITE_URL
+    headers:
+      - "X-Upptime-Secret: $UPPTIME_SECRET"
+    expectedStatusCodes:
+      - 200
+      - 301
+      - 302
+    maxResponseTime: 5000
+
+  - name: API Services
+    url: $API_URL
+    headers:
+      - "X-Upptime-Secret: $UPPTIME_SECRET"
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 3000
+
+  - name: Task Orchestration
+    url: $CONTROL_PLANE_URL
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 5000
+
+  - name: Bot Runtime
+    url: $WORKER_URL
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 5000
+
+  - name: AI Decision Service
+    url: $INFERENCE_URL
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 5000
+
+status-website:
+  cname: status.monstera.club
+  name: Status
+  theme: dark
+
+  navbar:
+    - title: Home
+      href: https://monstera.club
+
+  i18n:
+    activeIncidents: 活跃事件
+    allSystemsOperational: 所有系统运行正常
+    incidentReport: "事件 #$NUMBER 报告 →"
+    activeIncidentSummary: 于 $DATE 开启，包含 $POSTS 条帖子
+    incidentTitle: 事件 $NUMBER 详情
+    incidentDetails: 事件详情
+    incidentFixed: 已修复
+    incidentOngoing: 进行中
+    incidentOpenedAt: 开启于
+    incidentClosedAt: 关闭于
+    incidentViewOnGitHub: 在 GitHub 上查看并订阅
+    incidentCommentSummary: 发表于 $DATE，由 $AUTHOR
+    incidentBack: ← 返回所有事件
+    pastIncidents: 过往事件
+    pastIncidentsResolved: 于 $MINUTES 分钟内，包含 $POSTS 条帖子，已解决
+    liveStatus: 实时状态
+    overallUptime: "整体正常运行时间: $UPTIME"
+    overallUptimeTitle: 整体正常运行时间
+    averageResponseTime: "平均响应时间: $TIMEms"
+    averageResponseTimeTitle: 平均响应时间
+    sevelDayResponseTime: 7 天响应时间
+    responseTimeMs: 响应时间 (ms)
+    ms: 毫秒
+    loading: 加载中
+    navGitHub: GitHub
+    footer: 本页面由 [Upptime](https://upptime.js.org) 提供支持
+    rateLimitExceededTitle: 超出速率限制
+    rateLimitExceededIntro: 您已超出在一小时内可以执行的请求数，因此您必须等待才能再次访问此网站。或者，您可以添加 GitHub Personal Access Token 以继续使用本网站。
+    rateLimitExceededWhatDoesErrorMean: 这个错误是什么意思？
+    rateLimitExceededErrorMeaning: 本网站使用 GitHub API 访问有关我们网站状态的实时数据。默认情况下，GitHub 允许每个 IP 地址每小时 60 个请求，而您已经用完了这些请求。
+    rateLimitExceededErrorHowCanFix: 我该如何修复它？
+    rateLimitExceededErrorFix: 您可以再等一个小时，您的 IP 地址限制将恢复。或者，您可以添加您的 GitHub Personal Access Token，这将为您提供每小时额外的 5,000 个请求。
+    rateLimitExceededGeneratePAT: 了解如何生成 Personal Access Token
+    rateLimitExceededHasSet: 您已经设置了 Personal Access Token。
+    rateLimitExceededRemoveToken: 移除 Token
+    rateLimitExceededGitHubPAT: GitHub Personal Access Token
+    rateLimitExceededCopyPastePAT: 复制并粘贴您的 Token
+    rateLimitExceededSaveToken: 保存 Token
+    errorTitle: 发生错误
+    errorIntro: 尝试获取最新状态详细信息时发生错误。
+    errorText: 您可以稍后再试。
+    errorHome: 返回主页
+    pastScheduledMaintenance: 过去的计划维护
+    scheduledMaintenance: 计划维护
+    scheduledMaintenanceSummaryStarted: 从 $DATE 开始，持续 $DURATION 分钟
+    scheduledMaintenanceSummaryStarts: 从 $DATE 开始，持续 $DURATION 分钟
+    startedAt: 开始于
+    startsAt: 开始于
+    duration: 持续时间
+    durationMin: $DURATION 分钟
+    incidentCompleted: 已完成
+    incidentScheduled: 已计划
+    url: 链接
+    status: 状态
+    history: 历史
+    responseTime: 响应时间
+    uptime: 正常运行时间
+    up: "🟩 正常"
+    degraded: "🟨 降级"
+    down: "🟥 故障"
+    currentStatus: 当前状态
+    liveStatusHtmlComment: "<!--实时状态-->"
+
+assignees:
+  - bOOOOcG
+
+workflowSchedule:
+  uptime: "*/5 * * * *"
+
+user-agent: upptime-bot
+
+commitMessages:
+  readmeContent: ":pencil: Update summary [skip ci]"
+  basicContent: "$EMOJI $SITE_NAME $STATUS ($RESPONSE_CODE in $RESPONSE_TIME ms)"
