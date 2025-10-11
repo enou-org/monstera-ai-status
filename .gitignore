@@ -47,8 +47,5 @@ node_modules/
 Thumbs.db
 
 # Upptime generated files
-history/
-graphs/
-api/
 __sapper__
 .vercel
