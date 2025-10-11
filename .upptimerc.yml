@@ -4,14 +4,12 @@ repo: monstera-ai-status
 
 sites:
   - name: Website
-    url: $WEBSITE_URL
+    url: $API_URL
     headers:
       - "X-Upptime-Secret: $UPPTIME_SECRET"
     expectedStatusCodes:
       - 200
-      - 301
-      - 302
-    maxResponseTime: 5000
+    maxResponseTime: 3000
 
   - name: API Services
     url: $API_URL
